@@ -45,6 +45,10 @@ function course_clickHandler(e){
 			chrome.storage.sync.set({"Cdata": array},function(){
 				console.log("Cdata:"+items.Cdata);
 			});
+					
+			chrome.storage.sync.set({"Index": 0},function(items){
+
+			});
 		
 	});
 }
@@ -71,6 +75,7 @@ function delete_clickHandler(e){
 			}
 	    });
 	});
+
 
 }
 function enable(){
