@@ -18,7 +18,7 @@
     	"js" : ["jquery.js","loginPage.js"]
     },{
     	"matches" : [ "*://www.ais.tku.edu.tw/elecos/action.aspx" ],
-    	"js" : ["jquery.js","mainadd.js"]
+    	"js" : ["jquery.js","queueData.js","mainadd.js"]
       },
       {
     	"matches" : [ "*://www.ais.tku.edu.tw/elecos/Other/KeyinOver.aspx" ],

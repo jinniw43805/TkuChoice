@@ -31,9 +31,12 @@ function course_clickHandler(e){
 			if (items.Cdata===undefined) {
 
 			}else{
-				// for (var i = 0; i < items.Cdata.length; i++) {
-				// 	array.push(items.Cdata[i]);
-				// };
+
+				//This is let multi-course addable.
+				for (var i = 0; i < items.Cdata.length; i++) {
+					array.push(items.Cdata[i]);
+				};
+				//End multi-course addable
 			}
 
 
@@ -71,7 +74,7 @@ function delete_clickHandler(e){
 
 }
 function enable(){
-	
+
 }
  function renderCoursePage(){
  	var div=document.getElementById("CourseField");
@@ -84,7 +87,9 @@ function enable(){
 				getCourse=items.Cdata;
 
 				//console.log(getCourse);
+				//Mean not 
 				if (getCourse===undefined) {
+
 
 				}else{
 					for (var i = 0; i < getCourse.length; i++) {
