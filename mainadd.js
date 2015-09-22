@@ -46,11 +46,7 @@ chrome.storage.sync.get(function(items) {
 		if (!chrome.runtime.error) {
 
 			//set index ==0
-			
-
-			chrome.storage.sync.set({"Index": 0},function(items){
-
-			});
+		
 
 
 			if (items.Cdata === undefined) {
