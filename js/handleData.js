@@ -120,6 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('saveUser').addEventListener('click', user_clickHandler);
   document.getElementById('saveCourse').addEventListener('click',course_clickHandler);
   document.getElementById('deleteCourse').addEventListener('click',delete_clickHandler);
-  document.getElementById('ableButton').addEventListener('click',enable;
+  // document.getElementById('ableButton').addEventListener('click',enable;
   
 });

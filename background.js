@@ -6,3 +6,16 @@ chrome.app.runtime.onLaunched.addListener(function() {
     }
   });
 });
+
+
+chrome.runtime.onInstalled.addListener( function(details) {
+  switch(details.reason) {
+    case "install":
+      // First installation
+      chrome.tabs.create({url: "helloPage.html"});
+      break;
+    case "update":
+      // First run after an update
+      break;
+  }
+});
