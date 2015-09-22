@@ -85,6 +85,11 @@ function goLogin_clickHandler(){
      	url: "http://www.ais.tku.edu.tw/elecos/login.aspx"
 	});
 }
+function auth_clickHandler (){
+	chrome.tabs.update({
+     	url: "https://github.com/jinniw43805"
+	});
+}
 function enable(){
 
 }
@@ -155,6 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('saveCourse').addEventListener('click',course_clickHandler);
   document.getElementById('deleteCourse').addEventListener('click',delete_clickHandler);
   document.getElementById('goLoginBtn').addEventListener('click',goLogin_clickHandler);
+  document.getElementById('authBtn').addEventListener('click',auth_clickHandler);
+
   // document.getElementById('ableButton').addEventListener('click',enable;
   
 });
