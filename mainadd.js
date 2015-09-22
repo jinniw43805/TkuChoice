@@ -40,6 +40,7 @@ chrome.storage.sync.get(function(items) {
 			var number=document.getElementById("txtCosEleSeq");
 			number.value=Course;
 			console.log(Course);
+			
 			document.getElementById("btnAdd").click();
 
 		}
