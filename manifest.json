@@ -1,7 +1,7 @@
 {
 	"name" : "TKU選課不哭不哭",
 	"description" : "Edit by Tony Kuo",
-	"version" : "0.1",
+	"version" : "1.0",
 	"manifest_version": 2,
 	// "app": {
  //    "background": {
@@ -16,15 +16,15 @@
     "content_scripts" : [ {
     	"matches" : [ "*://www.ais.tku.edu.tw/elecos/login.aspx" ],
     	"js" : ["jquery.js","loginPage.js"]
-    }],
-
-	"content_scripts" : [ {
-
+    },{
     	"matches" : [ "*://www.ais.tku.edu.tw/elecos/action.aspx" ],
     	"js" : ["jquery.js","mainadd.js"]
-
-    }],
-
+      },
+      {
+    	"matches" : [ "*://www.ais.tku.edu.tw/elecos/Other/KeyinOver.aspx" ],
+    	"js" : ["jquery.js","returnPage.js"]
+      }
+    ],
 
 
     "browser_action" : {

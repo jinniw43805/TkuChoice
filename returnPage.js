@@ -1,0 +1,1 @@
+document.getElementById("btnReLogin").click();

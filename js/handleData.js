@@ -17,29 +17,31 @@ function course_clickHandler(e){
  	
 
 	chrome.storage.sync.get(function(items) {
+		
+		//只能新增一個
 	
-		var array = [];
+			var array = [];
 
-		var course = document.getElementById("InputCourse").value;
-			
-		var data = {
-			Course : course
-		};
-
-		if (items.Cdata===undefined) {
-
-		}else{
-			for (var i = 0; i < items.Cdata.length; i++) {
-				array.push(items.Cdata[i]);
+			var course = document.getElementById("InputCourse").value;
+				
+			var data = {
+				Course : course
 			};
-		}
+
+			if (items.Cdata===undefined) {
+
+			}else{
+				// for (var i = 0; i < items.Cdata.length; i++) {
+				// 	array.push(items.Cdata[i]);
+				// };
+			}
 
 
-		array.push(data);
+			array.push(data);
 
-		chrome.storage.sync.set({"Cdata": array},function(){
-			console.log("Cdata:"+items.Cdata);
-		});
+			chrome.storage.sync.set({"Cdata": array},function(){
+				console.log("Cdata:"+items.Cdata);
+			});
 		
 	});
 }
