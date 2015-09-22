@@ -20,24 +20,29 @@ function course_clickHandler(e){
 
 	chrome.storage.sync.get(function(items) {
 	
-
 		var array = [];
 
-		for (var i = 0; i < items.Cdata.length; i++) {
-			array.push(items.Cdata[i]);
-		};
-
 		var course = document.getElementById("InputCourse").value;
-		
+			
 		var data = {
 			Course : course
+		};
+
+		if (items.Cdata===undefined) {
+
+		}else{
+			for (var i = 0; i < items.Cdata.length; i++) {
+				array.push(items.Cdata[i]);
+			};
 		}
 
-		array.push(data);
 
+		array.push(data);
+		
 		chrome.storage.sync.set({"Cdata": array},function(){
 			console.log("Cdata:"+items.Cdata);
-		})
+		});
+		
 	});
 }
 
@@ -47,16 +52,20 @@ function course_clickHandler(e){
  	var getCourse ;
 
 
-	  chrome.storage.sync.get("Cdata", function(items) {
+	  chrome.storage.sync.get(function(items) {
 			if (!chrome.runtime.error) {
 				getCourse=items.Cdata;
 
-				 console.log(getCourse);
+				//console.log(getCourse);
+				if (getCourse===undefined) {
 
-			 	for (var i = 0; i < getCourse.length; i++) {
-			 		div.innerHTML = div.innerHTML + ' <p>' +getCourse[i].Course +'<p>';
-			 	};
+				}else{
+					for (var i = 0; i < getCourse.length; i++) {
+			 			div.innerHTML = div.innerHTML + ' <p>' +getCourse[i].Course +'<p>';
+			 		}
 
+				}
+			 	
 			}
 	  });
 					
@@ -66,12 +75,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	renderCoursePage();
 
-  chrome.storage.sync.get("userId", function(items) {
+  	chrome.storage.sync.get("userId", function(items) {
 		if (!chrome.runtime.error) {
 			console.log(items);
 			document.getElementById("userId").value=items.userId;
 		}
-  });
+  	});
 	
   
   chrome.storage.sync.get("Password", function(items) {
