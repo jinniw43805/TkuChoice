@@ -45,7 +45,7 @@ function course_clickHandler(e){
 			chrome.storage.sync.set({"Cdata": array},function(){
 				console.log("Cdata:"+items.Cdata);
 			});
-					
+
 			chrome.storage.sync.set({"Index": 0},function(items){
 
 			});
@@ -67,7 +67,7 @@ function delete_clickHandler(e){
 
 				}else{
 					for (var i = 0; i < getCourse.length; i++) {
-			 			div.innerHTML = div.innerHTML + ' <p>' +getCourse[i].Course +'<p>';
+			 			div.innerHTML = div.innerHTML + getCourse[i].Course;
 			 		}
 
 				}
@@ -77,6 +77,13 @@ function delete_clickHandler(e){
 	});
 
 
+}
+function goLogin_clickHandler(){
+	// window.location.href = 'http://www.ais.tku.edu.tw/elecos/login.aspx';
+	// console.log("jump");
+	chrome.tabs.update({
+     	url: "http://www.ais.tku.edu.tw/elecos/login.aspx"
+	});
 }
 function enable(){
 
@@ -97,9 +104,26 @@ function enable(){
 
 
 				}else{
+
+					var courseDiv=document.getElementById("CourseField");
+
+					var arrayDiv=[];
+					var elementDiv=[];
 					for (var i = 0; i < getCourse.length; i++) {
-			 			div.innerHTML = div.innerHTML + ' <p>' +getCourse[i].Course +'<p>';
-			 		}
+						arrayDiv[i] = document.createElement('div');
+						// arrayDiv[i].id = 'divCourse:'+getCourse[i].Course;
+						arrayDiv[i].className = 'panel panel-default';
+
+						elementDiv[i] = document.createElement('div');
+						// elementDiv[i].id = 'divCourse:'+getCourse[i].Course;
+						elementDiv[i].className = 'panel-body';
+
+						elementDiv[i].innerHTML = getCourse[i].Course;
+
+						arrayDiv[i].appendChild(elementDiv[i]);
+						courseDiv.appendChild(arrayDiv[i]);
+			 			// div.innerHTML = div.innerHTML + ' <p>' +getCourse[i].Course +'<p>';
+			 		}	
 
 				}
 			 	
@@ -130,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('saveUser').addEventListener('click', user_clickHandler);
   document.getElementById('saveCourse').addEventListener('click',course_clickHandler);
   document.getElementById('deleteCourse').addEventListener('click',delete_clickHandler);
+  document.getElementById('goLoginBtn').addEventListener('click',goLogin_clickHandler);
   // document.getElementById('ableButton').addEventListener('click',enable;
   
 });
