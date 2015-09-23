@@ -114,16 +114,35 @@ function enable(){
 
 					var arrayDiv=[];
 					var elementDiv=[];
+					var titleDiv=[];
+					var headingDiv=[];
 					for (var i = 0; i < getCourse.length; i++) {
 						arrayDiv[i] = document.createElement('div');
-						// arrayDiv[i].id = 'divCourse:'+getCourse[i].Course;
+						arrayDiv[i].id = 'divCourse';
 						arrayDiv[i].className = 'panel panel-default';
+
 
 						elementDiv[i] = document.createElement('div');
 						// elementDiv[i].id = 'divCourse:'+getCourse[i].Course;
 						elementDiv[i].className = 'panel-body';
 
 						elementDiv[i].innerHTML = getCourse[i].Course;
+
+						//
+						headingDiv[i] = document.createElement('div');
+						headingDiv[i].className = 'panel-heading';
+
+
+						//
+						titleDiv[i] = document.createElement('div');
+						titleDiv[i].className = 'panel-title';
+						titleDiv[i].innerHTML = 'Priority :'+(i+1);
+
+						//
+						headingDiv[i].appendChild(titleDiv[i]);
+
+						arrayDiv[i].appendChild(headingDiv[i]);
+						//
 
 						arrayDiv[i].appendChild(elementDiv[i]);
 						courseDiv.appendChild(arrayDiv[i]);

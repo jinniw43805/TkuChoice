@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  		<link href="bootstrap.min.css" rel="stylesheet">
-
+  <head>	
+  		<link href="bootstrap.min.css" 	type="text/css"	rel="stylesheet">
+  		<link href="window.css"			type="text/css" rel="stylesheet">
   </head>
   <body >
   	<div id="mainBoard" class="container-fluid">
@@ -10,58 +10,63 @@
 		   		<div class="col-md-1">
 			 		<h1>TKU</h1>
 			 		<h1>Course</h1>
+			 		<hr>
 	 			</div>
-		  	<span class="label label-primary">User info</span>
+	 		<h4>
+		  		<span class="label label-primary" id="userInfo">User info</span>
+		  	</h2>
 		    <div style="margin-top:5px">Id</div>
 		    <form>
-		    <INPUT type="text" NAME="inputbox" VALUE="ID" id="userId" class="form-control"><P>
+		    <INPUT type="text" NAME="inputbox" placeholder="Id" id="userId" class="form-control"><P>
 		    <div>Password</div>
-		    <INPUT type="password" NAME="inputbox" VALUE="Password" id="userPassword" class="form-control"><P>
+		    <INPUT type="password" NAME="inputbox" placeholder="Password" id="userPassword" class="form-control"><P>
 		    <div id="save" style="margin-top:5px">
 		    	<button id="saveUser" class="btn btn-info">Save Info</button>
 		    </div>
 		    <hr>
 	     </div>
 	    
-    <div id="CourseField">
-    	<p>The course you chosen.</p>
-<!-- 	    <div class="panel panel-default">
-	    	<div class="panel-body">Courses	 field</div>
-		</div> -->
-    </div>
- 	<div id="inputField">
- 		<form>
- 		<INPUT type="test" NAME="inputbox" value="course" id="InputCourse" class="form-control"><p>
- 	</div>
-    <div id="AddField" style="margin-top:10px">
-	    	<button id="saveCourse" class="btn btn-primary">Save Course</button>
-	    </form>  
-    </div>
-    <div id="DeleteField" style="margin-top:10px">
-    	<form>
-    	<button id="deleteCourse" class="btn btn-danger">Delete All</button>
-    	</form>
-    </div>
-    <div id="Additional Board" style="margin-top:10px">
-    	<button type="button" class="btn btn-default" id="goLoginBtn">Let's Go!!</button>
-<!--     <button id="ableButton">Enable/disable</button>-->    
-<!-- 		<img src="my.png" class="img-circle" alt="Cinque Terre" width="50" height="50">
- --> 	</div>
+	    <div id="CourseField">
+	    	<p>The course you chosen.</p>
+	<!-- 	    <div class="panel panel-default">
+		    	<div class="panel-body">Courses	 field</div>
+			</div> -->
+	    </div>
+	 	<div id="inputField">
+	 		<form>
+	 		<INPUT type="test" NAME="inputbox" placeholder="Course here" id="InputCourse" class="form-control"><p>
+	 	</div>
+	    <div id="AddField" style="margin-top:20px">
+		    	<button id="saveCourse" class="btn btn-primary">Save Course</button>
+		    </form>  
+	    </div>
+	    <div id="DeleteField" style="margin-top:20px">
+	    	<form>
+	    	<button id="deleteCourse" class="btn btn-danger">Delete All</button>
+	    	</form>
+	    </div>
+	    <div id="Additional Board" style="margin-top:20px">
+	    	<button type="button" class="btn btn-default" id="goLoginBtn">Let's Go!!</button>
+	<!--     <button id="ableButton">Enable/disable</button>-->    
+	<!-- 		<img src="my.png" class="img-circle" alt="Cinque Terre" width="50" height="50">
+	 --> 	</div>
 
- 	<hr>
+	 	<hr>
 
- 	<div id="AuthInfo" style="margin-top:10px">
- 		  <button type="button" class="btn btn-info" id="authBtn">Author</button>
- 	</div>
+	 	<div id="AuthInfo" style="margin-top:10px">
+	 		  <button type="button" class="btn btn-info" id="authBtn">Author</button>
+	 	</div>
 
+
+	 	<footer class="container" style="padding-top: 15px;">
+	 		<p class="text-muted">Copyright &copy; 2015 </p>
+	 		<p class="text-muted">Tony K </p>
+	 		<!-- <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> -->
+	 	</footer>
+<!-- 	 	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+ -->    </div>	
+ 	<script src="js/jquery.js"></script>    
  	<script src="js/bootstrap.min.js"></script>
     <script src="js/handleData.js"></script>
-    </div>
-
- 	<footer class="container" style="padding-top: 15px;">
- 		<p class="text-muted">Copyright &copy; 2015 </p>
- 		<p class="text-muted">Tony K </p>
- 	</footer>
-
   </body>
 </html>
