@@ -2,7 +2,9 @@
 	padding-right: 55px;
     padding-left: 55px;
 }
-
+.btn{
+    border-radius: 24px;
+}
 
 .footer {
     position: absolute;
@@ -40,7 +42,7 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: 1.25em;
+    border-radius: 0.25em;
 }
 
 #authBtn {

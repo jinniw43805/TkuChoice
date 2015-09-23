@@ -136,7 +136,7 @@ function enable(){
 						//
 						titleDiv[i] = document.createElement('div');
 						titleDiv[i].className = 'panel-title';
-						titleDiv[i].innerHTML = 'Priority :'+(i+1);
+						titleDiv[i].innerHTML = 'Priority : '+(i+1);
 
 						//
 						headingDiv[i].appendChild(titleDiv[i]);
