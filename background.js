@@ -12,12 +12,24 @@ chrome.app.runtime.onInstalled.addListener( function(details) {
   switch(details.reason) {
     case "install":
       // First installation
-  		chrome.tabs.update({url: "helloPage.html"});
+  		// chrome.tabs.update({url: "helloPage.html"});
 
-      break;
+  		//----
+  		// chrome.app.window.create(
+	   //    "helloPage.html",
+	   //    {  width: 600,
+	   //       height: 400,
+	   //       frame: 'chrome'
+	   //    },
+	   //    function(appWin) {}
+	   //  );
+	// var notification = webkitNotifications.createHTMLNotification(
+	// 	  'helloPage.html'  // html url - can be relative
+	// 	);
+    break;
     case "update":
       // First run after an update
-        chrome.tabs.update({url: "installed.html"});
+        // chrome.tabs.update({url: "installed.html"});
 
       break;
   }
