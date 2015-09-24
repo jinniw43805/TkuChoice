@@ -8,7 +8,9 @@ chrome.app.runtime.onLaunched.addListener(function() {
 });
 
 
-chrome.app.runtime.onInstalled.addListener( function(details) {
+chrome.runtime.onInstalled.addListener( function(details) {
+
+
   switch(details.reason) {
     case "install":
       // First installation
@@ -26,12 +28,13 @@ chrome.app.runtime.onInstalled.addListener( function(details) {
 	// var notification = webkitNotifications.createHTMLNotification(
 	// 	  'helloPage.html'  // html url - can be relative
 	// 	);
+		chrome.windows.create({url: "helloPage.html", type: "popup"});
     break;
     case "update":
       // First run after an update
         // chrome.tabs.update({url: "installed.html"});
-
-      break;
+        chrome.windows.create({url: "helloPage.html", type: "popup"});
+     	break;
   }
 });
 
