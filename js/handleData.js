@@ -1,6 +1,8 @@
 function user_clickHandler(e) {
 	var Id = document.getElementById("userId").value;
 	var Pw = document.getElementById("userPassword").value;
+
+
 	chrome.storage.sync.set({ "userId" : Id }, function() {
 		if (chrome.runtime.error) {
 			console.log("Runtime error.");
@@ -12,6 +14,8 @@ function user_clickHandler(e) {
 			console.log("Runtime error.");
 		}
 	});
+
+
 }
 function course_clickHandler(e){
  	
@@ -105,7 +109,9 @@ function enable(){
 
 				//console.log(getCourse);
 				//Mean not 
-				if (getCourse===undefined) {
+				if (getCourse===undefined || getCourse[0].Course=="") {
+
+					$("#InputCourse").notify("->",{ position:"left" });
 
 
 				}else{
@@ -156,7 +162,11 @@ function enable(){
 	chrome.storage.sync.get("userId", function(items) {
 		if (!chrome.runtime.error) {
 			console.log(items);
-			document.getElementById("userId").value=items.userId;
+			if(items.userId==undefined || items.userId==""){
+				$("#userId").notify("->",{ position:"left" });
+			}else{
+				document.getElementById("userId").value=items.userId;
+			}
 		}
   	});
 	
@@ -164,9 +174,26 @@ function enable(){
 	chrome.storage.sync.get("Password", function(items) {
 		if (!chrome.runtime.error) {
 			console.log(items);
-			document.getElementById("userPassword").value=items.Password;
+			if(items.Password==undefined || items.Password==""){
+				$("#userPassword").notify("->",{ position:"left" });
+			}else{
+				document.getElementById("userPassword").value=items.Password;
+
+			}
 		}
-	});			
+	});	
+
+
+	//Check user id == undifined 
+		//show box
+	// if(document.getElementById("userId").value==="undefined"){
+	// 	//test
+	// 	$("#userId").notify("->",{ position:"left" });
+		
+	// }
+	//Check user password == undifined 
+		//show box
+
  }
 
 document.addEventListener('DOMContentLoaded', function () {
