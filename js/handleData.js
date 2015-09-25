@@ -203,7 +203,11 @@ function enable(){
 	// document.getElementById("versionField").addClass("text-right");
  }
 
+loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 300, easingIn : mina.easeinout } );
+
 document.addEventListener('DOMContentLoaded', function () {
+
+	loader.show();
 
 	renderCoursePage();
 
