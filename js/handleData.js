@@ -111,7 +111,7 @@ function enable(){
 				//Mean not 
 				if (getCourse===undefined || getCourse[0].Course=="") {
 
-					$("#InputCourse").notify("->",{ position:"left" });
+					//$("#InputCourse").notify("->",{ position:"left" });
 
 
 				}else{
@@ -174,8 +174,8 @@ function enable(){
 	chrome.storage.sync.get("Password", function(items) {
 		if (!chrome.runtime.error) {
 			console.log(items);
-			if(items.Password==undefined || items.Password==""){
-				$("#userPassword").notify("->",{ position:"left" });
+			 if(items.Password==undefined || items.Password==""){
+			// 	$("#userPassword").notify("->",{ position:"left" });
 			}else{
 				document.getElementById("userPassword").value=items.Password;
 
@@ -202,14 +202,30 @@ function enable(){
 	document.getElementById("versionField").innerHTML = "Version:"+version;
 	// document.getElementById("versionField").addClass("text-right");
  }
+var pageWrap = document.getElementById( 'mainBoard' ),
 
-loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 300, easingIn : mina.easeinout } );
+loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 500, easingIn : mina.easeinout } );
 
 document.addEventListener('DOMContentLoaded', function () {
 
 	loader.show();
 
-	renderCoursePage();
+	setTimeout( function(){
+		loader.hide();
+
+		// if(items.Password==undefined || items.Password==""){
+		// 		$("#userPassword").notify("->",{ position:"left" });
+
+		// console.log(document.getElementById("userId"));
+								// classie.removeClass( pages[ currentPage ], 'show' );
+								// // update..
+								// currentPage = currentPage ? 0 : 1;
+								// classie.addClass( pages[ currentPage ], 'show' );
+		renderCoursePage();
+
+	}, 1000 );
+
+	// renderCoursePage();
 
   	
 
