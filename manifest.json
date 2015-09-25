@@ -1,7 +1,7 @@
 {
 	"name" : "TKU選課不哭不哭",
 	"description" : "Edit by Tony Kuo",
-	"version" : "1.8",
+	"version" : "1.9",
 	"manifest_version": 2,
     "icons": { "16": "choiceIcon.png", "128": "choiceIcon.png" },
     "permissions": [

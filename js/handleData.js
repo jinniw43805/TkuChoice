@@ -194,6 +194,13 @@ function enable(){
 	//Check user password == undifined 
 		//show box
 
+	//version area
+
+	var version = chrome.app.getDetails().version;
+	console.log("Version:"+version+"by Tony K.");
+
+	document.getElementById("versionField").innerHTML = "Version:"+version;
+	// document.getElementById("versionField").addClass("text-right");
  }
 
 document.addEventListener('DOMContentLoaded', function () {
